@@ -1,0 +1,25 @@
+{
+  "name": "baseline",
+  "config": {
+    "connector.class": "com.datastax.oss.kafka.sink.CassandraSinkConnector",
+    "tasks.max": "1",
+    "topics": "rerate-edr",
+    "contactPoints": "cassandra",
+    "loadBalancing.localDc": "datacenter1",
+    "port": "9042",
+    "ignoreErrors": "None",
+    "errors.tolerance": "none",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "transforms": "ingestion,formatTime",
+    "transforms.ingestion.type": "org.apache.kafka.connect.transforms.InsertField$Value",
+    "transforms.ingestion.timestamp.field": "ingestionTime",
+    "topic.rerate-edr.rerate.rerate_edr_v2.mapping": "subscriber_id=value.subscriberId,event_time=value.eventTime,txn_id=value.txnId,event_seq_no=value.eventSeqNo,job_id=value.jobId,event_type=value.eventType,operation=value.operation,status=value.status",
+    "topic.rerate-edr.rerate.rerate_edr_v1.mapping": "subscriber_id=value.subscriberId,ingestion_time=value.ingestionTime,job_id=value.jobId,txn_id=value.txnId,status=value.eventType",
+    "transforms.formatTime.type": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+    "transforms.formatTime.field": "ingestionTime",
+    "transforms.formatTime.target.type": "string",
+    "transforms.formatTime.format": "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+  }
+}

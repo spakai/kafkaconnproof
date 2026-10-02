@@ -1,0 +1,17 @@
+{
+  "name": "fallback-v1",
+  "config": {
+    "connector.class": "com.datastax.oss.kafka.sink.CassandraSinkConnector",
+    "tasks.max": "1",
+    "topics": "rerate-edr-terminal",
+    "contactPoints": "cassandra",
+    "loadBalancing.localDc": "datacenter1",
+    "port": "9042",
+    "ignoreErrors": "None",
+    "errors.tolerance": "none",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "topic.rerate-edr-terminal.rerate.rerate_edr_v1.mapping": "subscriber_id=value.subscriberId,ingestion_time=value.ingestionTime,job_id=value.jobId,txn_id=value.txnId,status=value.status"
+  }
+}

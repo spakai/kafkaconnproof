@@ -1,0 +1,85 @@
+name: rerate-poc
+services:
+  kafka:
+    image: confluentinc/cp-kafka:7.8.0
+    environment:
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:29093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+      KAFKA_HEAP_OPTS: -Xms256m -Xmx512m
+    healthcheck:
+      test: [CMD-SHELL, 'kafka-topics --bootstrap-server kafka:9092 --list >/dev/null 2>&1']
+      interval: 10s
+      timeout: 10s
+      retries: 30
+  cassandra:
+    image: cassandra:4.1.8
+    environment:
+      CASSANDRA_CLUSTER_NAME: rerate-poc
+      CASSANDRA_DC: datacenter1
+      MAX_HEAP_SIZE: 768M
+      HEAP_NEWSIZE: 128M
+    healthcheck:
+      test: [CMD-SHELL, 'cqlsh -e "SELECT release_version FROM system.local" >/dev/null 2>&1']
+      interval: 10s
+      timeout: 10s
+      retries: 40
+  connect:
+    build:
+      context: .
+      dockerfile: connect/Dockerfile
+      target: connect
+    ports: ['127.0.0.1:8083:8083']
+    depends_on:
+      kafka: {condition: service_healthy}
+      cassandra: {condition: service_healthy}
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: kafka:9092
+      CONNECT_REST_ADVERTISED_HOST_NAME: connect
+      CONNECT_GROUP_ID: rerate-connect
+      CONNECT_CONFIG_STORAGE_TOPIC: _connect-configs
+      CONNECT_OFFSET_STORAGE_TOPIC: _connect-offsets
+      CONNECT_STATUS_STORAGE_TOPIC: _connect-status
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE: 'false'
+      CONNECT_PLUGIN_PATH: /usr/share/java
+      CONNECT_OFFSET_FLUSH_INTERVAL_MS: 1000
+      KAFKA_HEAP_OPTS: -Xms256m -Xmx512m
+    healthcheck:
+      test: [CMD-SHELL, 'curl -fsS localhost:8083/connector-plugins >/dev/null']
+      interval: 10s
+      timeout: 10s
+      retries: 30
+  projection:
+    profiles: [fallback]
+    build:
+      context: .
+      dockerfile: connect/Dockerfile
+      target: projection
+    depends_on:
+      kafka: {condition: service_healthy}
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+  test:
+    profiles: [test]
+    build:
+      context: .
+      dockerfile: scripts/Dockerfile
+    volumes: ['./results:/work/results']
+    depends_on:
+      connect: {condition: service_healthy}

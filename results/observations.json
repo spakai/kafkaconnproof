@@ -1,0 +1,709 @@
+{
+  "baseline-first-transaction": {
+    "v2_count": 5,
+    "v1_count": 5,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:00",
+        "txn_id": "TXN1",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:01",
+        "txn_id": "TXN1",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:02",
+        "txn_id": "TXN1",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:03",
+        "txn_id": "TXN1",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:00",
+        "job_id": "JOB1",
+        "status": "SCHEDULED",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:01",
+        "job_id": "JOB1",
+        "status": "ATTEMPT",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:02",
+        "job_id": "JOB1",
+        "status": "OPERATION",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:03",
+        "job_id": "JOB1",
+        "status": "OPERATION",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      }
+    ]
+  },
+  "baseline": {
+    "v2_count": 10,
+    "v1_count": 10,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:00",
+        "txn_id": "TXN1",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:01",
+        "txn_id": "TXN1",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:02",
+        "txn_id": "TXN1",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:03",
+        "txn_id": "TXN1",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:00",
+        "txn_id": "TXN2",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:01",
+        "txn_id": "TXN2",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:02",
+        "txn_id": "TXN2",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:03",
+        "txn_id": "TXN2",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:04",
+        "txn_id": "TXN2",
+        "event_seq_no": 4,
+        "event_type": "FAILED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "FAILED"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:00",
+        "job_id": "JOB1",
+        "status": "SCHEDULED",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:01",
+        "job_id": "JOB1",
+        "status": "ATTEMPT",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:02",
+        "job_id": "JOB1",
+        "status": "OPERATION",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:03",
+        "job_id": "JOB1",
+        "status": "OPERATION",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:00",
+        "job_id": "JOB2",
+        "status": "SCHEDULED",
+        "txn_id": "TXN2"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:01",
+        "job_id": "JOB2",
+        "status": "ATTEMPT",
+        "txn_id": "TXN2"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:02",
+        "job_id": "JOB2",
+        "status": "OPERATION",
+        "txn_id": "TXN2"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:03",
+        "job_id": "JOB2",
+        "status": "OPERATION",
+        "txn_id": "TXN2"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:04",
+        "job_id": "JOB2",
+        "status": "FAILED",
+        "txn_id": "TXN2"
+      }
+    ]
+  },
+  "unsupported-table-filter": {
+    "v2_count": 0,
+    "v1_count": 0,
+    "rejected": true,
+    "status": {
+      "name": "unsupported-table-filter",
+      "connector": {
+        "state": "RUNNING",
+        "worker_id": "connect:8083"
+      },
+      "tasks": [
+        {
+          "id": 0,
+          "state": "FAILED",
+          "worker_id": "connect:8083",
+          "trace": "java.lang.IllegalArgumentException: The setting: topic.rerate-edr.rerate.rerate_edr_v1.filter does not match topic.keyspace.table nor topic.codec regular expression pattern\n\tat com.datastax.oss.common.sink.config.CassandraSinkConfig.tryMatchTopicName(CassandraSinkConfig.java:517)\n\tat com.datastax.oss.common.sink.config.CassandraSinkConfig.<init>(CassandraSinkConfig.java:241)\n\tat com.datastax.oss.common.sink.state.LifeCycleManager.lambda$startTask$0(LifeCycleManager.java:132)\n\tat java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Unknown Source)\n\tat com.datastax.oss.common.sink.state.LifeCycleManager.startTask(LifeCycleManager.java:129)\n\tat com.datastax.oss.common.sink.AbstractSinkTask.start(AbstractSinkTask.java:67)\n\tat com.datastax.oss.kafka.sink.CassandraSinkTask$SinkTaskProcessorImpl.start(CassandraSinkTask.java:175)\n\tat com.datastax.oss.kafka.sink.CassandraSinkTask.start(CassandraSinkTask.java:55)\n\tat org.apache.kafka.connect.runtime.WorkerSinkTask.initializeAndStart(WorkerSinkTask.java:323)\n\tat org.apache.kafka.connect.runtime.WorkerTask.doStart(WorkerTask.java:175)\n\tat org.apache.kafka.connect.runtime.WorkerTask.doRun(WorkerTask.java:224)\n\tat org.apache.kafka.connect.runtime.WorkerTask.run(WorkerTask.java:280)\n\tat org.apache.kafka.connect.runtime.isolation.Plugins.lambda$withClassLoader$1(Plugins.java:237)\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)\n\tat java.base/java.util.concurrent.FutureTask.run(Unknown Source)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base/java.lang.Thread.run(Unknown Source)\n"
+        }
+      ],
+      "type": "sink"
+    }
+  },
+  "global-filter": {
+    "v2_count": 2,
+    "v1_count": 2,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:04",
+        "txn_id": "TXN2",
+        "event_seq_no": 4,
+        "event_type": "FAILED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "FAILED"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:04",
+        "job_id": "JOB2",
+        "status": "FAILED",
+        "txn_id": "TXN2"
+      }
+    ]
+  },
+  "one-connector-routed": {
+    "v2_count": 10,
+    "v1_count": 2,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:00",
+        "txn_id": "TXN1",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:01",
+        "txn_id": "TXN1",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:02",
+        "txn_id": "TXN1",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:03",
+        "txn_id": "TXN1",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:00",
+        "txn_id": "TXN2",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:01",
+        "txn_id": "TXN2",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:02",
+        "txn_id": "TXN2",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:03",
+        "txn_id": "TXN2",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:04",
+        "txn_id": "TXN2",
+        "event_seq_no": 4,
+        "event_type": "FAILED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "FAILED"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:04",
+        "job_id": "JOB2",
+        "status": "FAILED",
+        "txn_id": "TXN2"
+      }
+    ],
+    "physical_topics": [
+      "__consumer_offsets",
+      "_connect-configs",
+      "_connect-offsets",
+      "_connect-status",
+      "rerate-edr"
+    ]
+  },
+  "one-connector-replay": {
+    "v2_count": 10,
+    "v1_count": 2,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:00",
+        "txn_id": "TXN1",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:01",
+        "txn_id": "TXN1",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:02",
+        "txn_id": "TXN1",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:03",
+        "txn_id": "TXN1",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:00",
+        "txn_id": "TXN2",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:01",
+        "txn_id": "TXN2",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:02",
+        "txn_id": "TXN2",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:03",
+        "txn_id": "TXN2",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:04",
+        "txn_id": "TXN2",
+        "event_seq_no": 4,
+        "event_type": "FAILED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "FAILED"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:04",
+        "job_id": "JOB2",
+        "status": "FAILED",
+        "txn_id": "TXN2"
+      }
+    ]
+  },
+  "fallback": {
+    "v2_count": 10,
+    "v1_count": 2,
+    "v2": [
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:00",
+        "txn_id": "TXN1",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:01",
+        "txn_id": "TXN1",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:02",
+        "txn_id": "TXN1",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:03",
+        "txn_id": "TXN1",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB1",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:00:04",
+        "txn_id": "TXN1",
+        "event_seq_no": 4,
+        "event_type": "SUCCESS",
+        "job_id": "JOB1",
+        "operation": null,
+        "status": "SUCCESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:00",
+        "txn_id": "TXN2",
+        "event_seq_no": 0,
+        "event_type": "SCHEDULED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:01",
+        "txn_id": "TXN2",
+        "event_seq_no": 1,
+        "event_type": "ATTEMPT",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:02",
+        "txn_id": "TXN2",
+        "event_seq_no": 2,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_INTENT",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:03",
+        "txn_id": "TXN2",
+        "event_seq_no": 3,
+        "event_type": "OPERATION",
+        "job_id": "JOB2",
+        "operation": "KAFKA_COMMIT_COMPLETED",
+        "status": "IN_PROGRESS"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "event_time": "2026-10-02 08:01:04",
+        "txn_id": "TXN2",
+        "event_seq_no": 4,
+        "event_type": "FAILED",
+        "job_id": "JOB2",
+        "operation": null,
+        "status": "FAILED"
+      }
+    ],
+    "v1": [
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:00:04",
+        "job_id": "JOB1",
+        "status": "SUCCESS",
+        "txn_id": "TXN1"
+      },
+      {
+        "subscriber_id": "SUB001",
+        "ingestion_time": "2026-10-02 08:01:04",
+        "job_id": "JOB2",
+        "status": "FAILED",
+        "txn_id": "TXN2"
+      }
+    ]
+  }
+}

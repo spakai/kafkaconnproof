@@ -1,0 +1,14 @@
+{
+  "worker": {
+    "version": "7.8.0-ccs",
+    "commit": "cc7168da1fddfcfde48b42031adde57bb5bcf529",
+    "kafka_cluster_id": "MkU3OEVBNTcwNTJENDM2Qk"
+  },
+  "datastax": [
+    {
+      "class": "com.datastax.oss.kafka.sink.CassandraSinkConnector",
+      "type": "sink",
+      "version": "1.7.6"
+    }
+  ]
+}
